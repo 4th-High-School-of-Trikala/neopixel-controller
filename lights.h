@@ -79,6 +79,10 @@ class LightsModule {
   //! @copydoc SetAllToColor(uint32_t)
   void SetAllToColor(Color color);
   
+  void SetHalfToColor(uint32_t color1, uint32_t color2);
+
+  void SetHalfToColor(Color color1, Color color2);
+
   /**
    * @brief Blink a specific led to a specific color
    * @param led - The led in question
@@ -110,6 +114,17 @@ class LightsModule {
   //! @copydoc ColorWipeAll(uint32_t, int)
   void ColorWipeAll(Color color, int duration);
 
+    /**
+   * @brief Color wipes of the neopixel's leds to the specific color
+   * @param color - The color to change the led to
+   * @param duration - The blink duration
+   * @param snake_length - The number of active leds
+   */
+  void Snake(uint32_t color, int duration, int snake_length);
+
+  //! @copydoc Snake(uint32_t, int, int)
+  void Snake(Color color, int duration, int snake_length);
+
   /**
    * @brief Chase effect on all of the neopixel's leds to the specific color
    * @param color - The color to change the led to
@@ -119,6 +134,33 @@ class LightsModule {
 
   //! @copydoc ChaseAll(uint32_t, int)
   void ChaseAll(Color color, int duration);
+
+  void Sprinkle(uint32_t color);
+
+  //! @copydoc Sprinkle(uint32_t)
+  void Sprinkle(Color color);
+
+  void GlowRandom(uint32_t color, int amount);
+
+  void GlowRandom(Color color, int amount);
+
+  void Merge(uint32_t color_a, uint32_t color_b);
+
+  void MergeSnake(uint32_t color_a, uint32_t color_b, int amount);
+
+  void Merge(Color color_a, Color color_b);
+
+  void MergeSnake(Color color_a, Color color_b, int amount);
+
+  void IncreaseBrightness();
+
+  void DecreaseBrightness();
+
+  void StarFlash();
+
+  void Fade(Color);
+  void DoubleFade(Color, Color);
+  void Rainbow(int8_t reps = 1, bool rev = false);
 };
 
 #endif
